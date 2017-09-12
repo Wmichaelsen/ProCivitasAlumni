@@ -1,0 +1,21 @@
+{
+  "array": [
+    {
+      "name": "Wilhelm Michaelsen",
+      "age": "19",
+      "location": [24.3435543, 23.453543]
+    },
+    {
+      "name": "Peter Connee",
+      "age": "45",
+      "location": [24.3433543, 23.453543]
+      
+    },
+    {
+      "name": "Blah",
+      "age": "25",
+      "location": [24.3435543, 23.453543]
+      
+    }
+  ]
+}
