@@ -1,26 +1,114 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URt-dQ-Lbs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides/>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wY5-IS-W1T">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BDq-5K-HPe" firstAttribute="trailing" secondItem="wY5-IS-W1T" secondAttribute="trailing" id="6KP-jd-ti1"/>
+                            <constraint firstItem="BDq-5K-HPe" firstAttribute="bottom" secondItem="wY5-IS-W1T" secondAttribute="bottom" id="9n8-lh-sIm"/>
+                            <constraint firstItem="wY5-IS-W1T" firstAttribute="leading" secondItem="BDq-5K-HPe" secondAttribute="leading" id="Cr3-XT-mwh"/>
+                            <constraint firstItem="wY5-IS-W1T" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KJM-jw-C8S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BDq-5K-HPe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="we5-ZD-v7G"/>
+                    <connections>
+                        <outlet property="mapView" destination="wY5-IS-W1T" id="etv-yw-lkJ"/>
+                        <segue destination="eAn-MX-Esl" kind="show" identifier="toAlumniProfile" id="hdn-YP-ba0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1223.2" y="138.98050974512745"/>
+        </scene>
+        <!--Alumni View Controller-->
+        <scene sceneID="lZu-Zn-nKv">
+            <objects>
+                <viewController id="eAn-MX-Esl" customClass="AlumniViewController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides/>
+                    <view key="view" contentMode="scaleToFill" id="OYc-eI-uEu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-ja-teb">
+                                <rect key="frame" x="127" y="87" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="5S4-Ke-ARS"/>
+                                    <constraint firstAttribute="height" constant="120" id="d7T-Rh-B2Y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wilhelm Michaelsen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH9-GF-zi4">
+                                <rect key="frame" x="16" y="231" width="343" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4jH-lI-rrY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ynW-Pk-urg" firstAttribute="trailing" secondItem="9b2-ja-teb" secondAttribute="trailing" constant="128" id="84e-hB-vm1"/>
+                            <constraint firstItem="EH9-GF-zi4" firstAttribute="leading" secondItem="ynW-Pk-urg" secondAttribute="leading" constant="16" id="GFG-Ps-pcn"/>
+                            <constraint firstItem="9b2-ja-teb" firstAttribute="leading" secondItem="ynW-Pk-urg" secondAttribute="leading" constant="127" id="KWb-m6-pCl"/>
+                            <constraint firstItem="EH9-GF-zi4" firstAttribute="top" secondItem="9b2-ja-teb" secondAttribute="bottom" constant="24" id="Ki0-Sn-VZs"/>
+                            <constraint firstItem="ynW-Pk-urg" firstAttribute="trailing" secondItem="EH9-GF-zi4" secondAttribute="trailing" constant="16" id="Uuc-s4-RFb"/>
+                            <constraint firstItem="9b2-ja-teb" firstAttribute="top" secondItem="ynW-Pk-urg" secondAttribute="top" constant="23" id="qjV-Aa-bRs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ynW-Pk-urg"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="9b2-ja-teb" id="gZo-vP-IkA"/>
+                        <outlet property="nameLabel" destination="EH9-GF-zi4" id="GUe-Q3-N0H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hi2-14-u5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1978.4000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TQ6-aC-YNF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="URt-dQ-Lbs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7CG-fp-SN5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zjK-B5-h5h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcP-2I-xgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="478" y="139"/>
         </scene>
     </scenes>
 </document>

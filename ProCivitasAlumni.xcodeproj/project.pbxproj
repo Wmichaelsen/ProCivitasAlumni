@@ -12,6 +12,10 @@
 		261B65BC1F58C617005048FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261B65BA1F58C617005048FA /* Main.storyboard */; };
 		261B65BE1F58C617005048FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261B65BD1F58C617005048FA /* Assets.xcassets */; };
 		261B65C11F58C617005048FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261B65BF1F58C617005048FA /* LaunchScreen.storyboard */; };
+		261B65C91F58C682005048FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B65C81F58C682005048FA /* MapViewController.swift */; };
+		261B65CB1F58C8CF005048FA /* Alumni.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B65CA1F58C8CF005048FA /* Alumni.swift */; };
+		26A5E9F21F5D91C700F54E63 /* alumni.json in Resources */ = {isa = PBXBuildFile; fileRef = 26A5E9F11F5D91C700F54E63 /* alumni.json */; };
+		26BFFDC01F618E80002D01CD /* AlumniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BFFDBF1F618E80002D01CD /* AlumniViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		261B65BD1F58C617005048FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		261B65C01F58C617005048FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		261B65C21F58C617005048FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		261B65C81F58C682005048FA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		261B65CA1F58C8CF005048FA /* Alumni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alumni.swift; sourceTree = "<group>"; };
+		26A5E9F11F5D91C700F54E63 /* alumni.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = alumni.json; path = ../../../../../Downloads/alumni.json; sourceTree = "<group>"; };
+		26BFFDBF1F618E80002D01CD /* AlumniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlumniViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +65,11 @@
 				261B65B61F58C617005048FA /* AppDelegate.swift */,
 				261B65B81F58C617005048FA /* ViewController.swift */,
 				261B65BA1F58C617005048FA /* Main.storyboard */,
+				26BFFDBF1F618E80002D01CD /* AlumniViewController.swift */,
+				261B65C81F58C682005048FA /* MapViewController.swift */,
+				261B65CA1F58C8CF005048FA /* Alumni.swift */,
 				261B65BD1F58C617005048FA /* Assets.xcassets */,
+				26A5E9F11F5D91C700F54E63 /* alumni.json */,
 				261B65BF1F58C617005048FA /* LaunchScreen.storyboard */,
 				261B65C21F58C617005048FA /* Info.plist */,
 			);
@@ -123,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				261B65C11F58C617005048FA /* LaunchScreen.storyboard in Resources */,
+				26A5E9F21F5D91C700F54E63 /* alumni.json in Resources */,
 				261B65BE1F58C617005048FA /* Assets.xcassets in Resources */,
 				261B65BC1F58C617005048FA /* Main.storyboard in Resources */,
 			);
@@ -136,6 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				261B65B91F58C617005048FA /* ViewController.swift in Sources */,
+				26BFFDC01F618E80002D01CD /* AlumniViewController.swift in Sources */,
+				261B65CB1F58C8CF005048FA /* Alumni.swift in Sources */,
+				261B65C91F58C682005048FA /* MapViewController.swift in Sources */,
 				261B65B71F58C617005048FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +328,7 @@
 				261B65C71F58C617005048FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

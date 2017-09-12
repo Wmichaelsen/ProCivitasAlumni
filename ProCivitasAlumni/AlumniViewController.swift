@@ -9,10 +9,21 @@
 import UIKit
 
 class AlumniViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var currentAlumni: Alumni? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard currentAlumni != nil else {
+            print("currentAlumni is nil")
+            return
+        }
+        
+        self.nameLabel.text = currentAlumni!.title!
+        
         // Do any additional setup after loading the view.
     }
 
