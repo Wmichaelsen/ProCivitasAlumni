@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ExploreVC-->
+        <scene sceneID="077-jH-ZdV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Explore" referencedIdentifier="ExploreVC" id="3A5-Ai-NVz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Bof-1c-ta2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFz-fs-f11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="20"/>
+        </scene>
+        <!--ProfileVC-->
+        <scene sceneID="3Gh-FJ-qeu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileVC" id="fX6-8R-E9f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hig-EZ-cgf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mq7-cd-yZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="20"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="6ci-S6-eDx">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTBC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i0R-8v-hKQ" customClass="MainTabBarController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y5f-IB-De2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fX6-8R-E9f" kind="relationship" relationship="viewControllers" id="ZnS-I2-D8y"/>
+                        <segue destination="3A5-Ai-NVz" kind="relationship" relationship="viewControllers" id="cn7-of-FEG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOk-LR-9GP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-599" y="-512"/>
+        </scene>
+    </scenes>
+</document>

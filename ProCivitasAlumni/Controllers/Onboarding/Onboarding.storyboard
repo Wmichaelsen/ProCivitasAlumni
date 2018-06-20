@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JEa-iW-LLh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="L6Q-sU-hab">
+            <objects>
+                <viewController storyboardIdentifier="OnboardVCID" id="JEa-iW-LLh" customClass="OnboardingViewController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zQT-Jj-yjo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMn-nK-tQR" customClass="OnboardingView" customModule="ProCivitasAlumni" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELA-oZ-OQ4">
+                                <rect key="frame" x="16" y="415" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4A4-Tt-tAz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickHereTapped:" destination="JEa-iW-LLh" eventType="touchUpInside" id="oBR-UG-oLa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CMn-nK-tQR" firstAttribute="leading" secondItem="eGU-rR-MaX" secondAttribute="leading" id="L2f-g0-bmJ"/>
+                            <constraint firstItem="eGU-rR-MaX" firstAttribute="top" secondItem="CMn-nK-tQR" secondAttribute="top" constant="20" id="Rz8-5c-DPY"/>
+                            <constraint firstItem="eGU-rR-MaX" firstAttribute="bottom" secondItem="ELA-oZ-OQ4" secondAttribute="bottom" constant="222" id="UEc-wg-o3j"/>
+                            <constraint firstItem="eGU-rR-MaX" firstAttribute="trailing" secondItem="ELA-oZ-OQ4" secondAttribute="trailing" constant="16" id="YfM-Xd-awG"/>
+                            <constraint firstItem="eGU-rR-MaX" firstAttribute="bottom" secondItem="CMn-nK-tQR" secondAttribute="bottom" id="apG-hA-oJh"/>
+                            <constraint firstItem="eGU-rR-MaX" firstAttribute="trailing" secondItem="CMn-nK-tQR" secondAttribute="trailing" id="lZG-YJ-NIa"/>
+                            <constraint firstItem="ELA-oZ-OQ4" firstAttribute="leading" secondItem="eGU-rR-MaX" secondAttribute="leading" constant="16" id="wVR-fP-S8P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eGU-rR-MaX"/>
+                    </view>
+                    <connections>
+                        <outlet property="clickHere" destination="ELA-oZ-OQ4" id="Vf3-qX-uev"/>
+                        <outlet property="onboardingView" destination="CMn-nK-tQR" id="6d6-Ck-CyI"/>
+                        <segue destination="ZEh-mS-Je8" kind="show" identifier="getStartedSegue" id="3yj-L1-W8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLU-vT-ZaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="167.76611694152925"/>
+        </scene>
+        <!--SignUp-->
+        <scene sceneID="gMi-5P-Zx9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUp" id="ZEh-mS-Je8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiD-9r-f6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="148"/>
+        </scene>
+    </scenes>
+</document>

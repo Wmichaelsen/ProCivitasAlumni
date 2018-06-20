@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9s4-4o-xGQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="xHj-cI-40I">
+            <objects>
+                <viewController storyboardIdentifier="SignUpVCID" id="9s4-4o-xGQ" customClass="SignUpViewController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u7D-1v-HKI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WP3-0w-srw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ssj-V4-l9s"/>
+                    <connections>
+                        <segue destination="Kbt-uK-tMQ" kind="show" identifier="ToMainSegue" id="dhY-uO-FvH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhT-ac-6vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.80000000000001" y="116.49175412293854"/>
+        </scene>
+        <!--MainTBC-->
+        <scene sceneID="21d-IU-ega">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainTBC" id="Kbt-uK-tMQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OZ-II-Vtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105.5999999999999" y="98.950524737631198"/>
+        </scene>
+    </scenes>
+</document>
