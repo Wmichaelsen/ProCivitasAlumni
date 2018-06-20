@@ -1,4 +1,0 @@
-module LinkedInSDK {
-    header "LinkedInSDK.h"
-    export *
-}

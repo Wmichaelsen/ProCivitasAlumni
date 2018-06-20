@@ -1,6 +1,0 @@
-framework module Pods_ProCivitasAlumni {
-  umbrella header "Pods-ProCivitasAlumni-umbrella.h"
-
-  export *
-  module * { export * }
-}
