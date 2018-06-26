@@ -8,36 +8,6 @@
 
 import UIKit
 
-struct HeaderInfo {
-    var image: UIImage
-    var name: String
-    var location: String
-}
-
-struct BodyInfo {
-    var headline: String
-}
-
-enum DataSourceItemType {
-    case header(HeaderInfo)
-    case work(BodyInfo)
-    case education(BodyInfo)
-}
-
-struct SectionHeader {
-    var title: String
-    var image: UIImage
-}
-
-struct DataSourceItem {
-    var identifer: String
-    var itemType: DataSourceItemType
-}
-
-enum Section {
-    case vertical(SectionHeader?, [DataSourceItem])
-}
-
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -50,9 +20,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         structureSections()
         subscribeForNotifications()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        presentLinkedinIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,15 +38,14 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
     
     fileprivate func subscribeForNotifications() {
-        kDefaultNotificationCenter.addObserver(
-            self,
-            selector: #selector(ProfileViewController.userSignedOut),
-            name: .kUserSignedOut,
-            object: nil
-        )
+        kDefaultNotificationCenter.addObserver(self, selector: #selector(ProfileViewController.userSignedOut), name: .kUserSignedOut, object: nil)
     }
     
-    
+    func presentLinkedinIfNeeded() {
+        if !kUserDefaults.bool(forKey: kLinkedinConnectedKey) {
+            self.performSegue(withIdentifier: "ToLinkedinSegue", sender: nil)
+        }
+    }
     
     fileprivate func structureSections() {
         
@@ -87,14 +60,14 @@ extension ProfileViewController {
         sections.append(headerSec)
         
         let dataSourceItemsWork = profile.workHistory!.map({ (work: Work) -> DataSourceItem in
-            return DataSourceItem(identifer: bodyCellID, itemType: DataSourceItemType.work(BodyInfo(headline: work.company)))
+            return DataSourceItem(identifer: bodyCellID, itemType: DataSourceItemType.work(BodyInfo(headline: work.position, main: work.company, time: "\(work.startDate) to \(work.endDate)")))
         })
         let headerWork = SectionHeader(title: "Work History", image: #imageLiteral(resourceName: "workIcon"))
         let bodySecWork = Section.vertical(headerWork, dataSourceItemsWork)
         sections.append(bodySecWork)
         
         let dataSourceItemsEd = profile.educationHistory!.map({ (education: Education) -> DataSourceItem in
-            return DataSourceItem(identifer: "bodyCell", itemType: DataSourceItemType.education(BodyInfo(headline: education.school)))
+            return DataSourceItem(identifer: "bodyCell", itemType: DataSourceItemType.education(BodyInfo(headline: education.school, main: education.program, time: "\(education.startDate) to \(education.endDate)")))
         })
         let headerEd = SectionHeader(title: "Education", image: #imageLiteral(resourceName: "edIcon"))
         let bodySecEd = Section.vertical(headerEd, dataSourceItemsEd)
@@ -103,6 +76,7 @@ extension ProfileViewController {
         self.sections = sections
     }
 }
+
 
 //MARK:- Notification handlers
 extension ProfileViewController {

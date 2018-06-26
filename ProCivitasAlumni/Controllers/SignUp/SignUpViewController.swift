@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
         
         self.loginCoordinator.delegate = self
         
-        UserDefaults.standard.set(true, forKey: "onboardComplete")
+        kUserDefaults.set(true, forKey: kOnboardCompleteKey)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,7 +97,7 @@ extension SignUpViewController: CustomLoginCoordinatorDelegate {
                 self.removeAllOverlays(window: APP_DELEGATE.window)
                 AlertView(title: "Oops", message: error!.localizedDescription).show()
             } else {
-                guard let profile = profile else {
+                guard profile != nil else {
                     self.removeAllOverlays(window: APP_DELEGATE.window)
                     AlertView(title: "Oops", message: "An unknown error occurred (code: 103). Please contact administrator").show()
                     return

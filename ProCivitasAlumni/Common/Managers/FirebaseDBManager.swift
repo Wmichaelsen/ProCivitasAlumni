@@ -18,20 +18,28 @@ class FirebaseDBManager: NSObject {
     
     var ref: DatabaseReference!
     
-    func readData(atPath path: String, type: String, completion: @escaping ([String : Any]) -> Void) {
-        
+    func readData(atPath path: String, withType type: DataEventType, withCompletion completion: @escaping (DataSnapshot) -> Void) {
+        ref = Database.database().reference()
+        ref.child(path).observe(type, with: completion)
     }
     
-    func readDataOnce(atPath path: String, completion: @escaping ([String : Any]) -> Void) {
-        
+    func readDataOnce(atPath path: String, withType type: DataEventType, withCompletion completion: @escaping (DataSnapshot) -> Void) {
+        ref = Database.database().reference()
+        ref.child(path).observeSingleEvent(of: type, with: completion)
     }
     
     func write(data: [String : Any], atPath path: String, withCompletion completion: @escaping (Error?, DatabaseReference) -> Void) {
-        var newData = data
-        newData["signUpDevice"] = "ios"
-        
         ref = Database.database().reference()
-        self.ref.child(path).setValue(newData, withCompletionBlock: completion)
+        self.ref.child(path).setValue(data, withCompletionBlock: completion)
     }
     
+    func update(data: Any, atPath path: String, withCompletion completion: @escaping (Error?, DatabaseReference) -> Void) {
+        ref = Database.database().reference()
+        ref.child(path).setValue(data, withCompletionBlock: completion)
+    }
+    
+    func query(value: Any, atPath path: String, withType type: DataEventType, withCompletion completion: @escaping (DataSnapshot) -> Void) {
+        ref = Database.database().reference()
+        ref.child(path).queryOrdered(byChild: "trackingAllowed").queryEqual(toValue: value).observeSingleEvent(of: type, with: completion)
+    }
 }

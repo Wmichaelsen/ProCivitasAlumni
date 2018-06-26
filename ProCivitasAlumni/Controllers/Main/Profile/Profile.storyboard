@@ -9,14 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SignUpVCID-->
-        <scene sceneID="4DU-Uw-cHr">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" referencedIdentifier="SignUpVCID" id="PwL-Pk-224" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E2N-na-cLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-906" y="-153"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="yPz-Od-R0a">
             <objects>
@@ -173,11 +165,20 @@
                     <navigationItem key="navigationItem" id="h7d-Vc-feY"/>
                     <connections>
                         <outlet property="tableView" destination="zp6-qe-I1c" id="t5G-SW-X61"/>
+                        <segue destination="oTc-tF-VhI" kind="presentation" identifier="ToLinkedinSegue" id="8qg-IU-myK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nya-y3-OCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="-82"/>
+            <point key="canvasLocation" x="-1418" y="-434"/>
+        </scene>
+        <!--LinkedinVCID-->
+        <scene sceneID="rJF-If-6XE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Linkedin" referencedIdentifier="LinkedinVCID" id="oTc-tF-VhI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="olS-FF-feB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="-215"/>
         </scene>
     </scenes>
 </document>

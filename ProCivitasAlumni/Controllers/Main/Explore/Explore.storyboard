@@ -17,26 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9J-II-1Gz">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aMn-h4-8yd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4SL-Qi-eQz" id="dAa-7T-n8s"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="S9J-II-1Gz" firstAttribute="centerY" secondItem="qUV-eV-Hai" secondAttribute="centerY" id="6VT-Jk-M6w"/>
-                            <constraint firstItem="S9J-II-1Gz" firstAttribute="height" secondItem="SuU-NQ-2Xq" secondAttribute="height" id="8E5-Mt-64n"/>
-                            <constraint firstItem="S9J-II-1Gz" firstAttribute="width" secondItem="SuU-NQ-2Xq" secondAttribute="width" id="WN0-Yx-oNL"/>
-                            <constraint firstItem="S9J-II-1Gz" firstAttribute="centerX" secondItem="qUV-eV-Hai" secondAttribute="centerX" id="gAJ-il-BOC"/>
+                            <constraint firstItem="aMn-h4-8yd" firstAttribute="bottom" secondItem="qUV-eV-Hai" secondAttribute="bottom" id="2tg-pP-Z8K"/>
+                            <constraint firstItem="aMn-h4-8yd" firstAttribute="top" secondItem="SuU-NQ-2Xq" secondAttribute="top" id="AXT-ra-Thg"/>
+                            <constraint firstItem="aMn-h4-8yd" firstAttribute="trailing" secondItem="qUV-eV-Hai" secondAttribute="trailing" id="XKK-mh-os5"/>
+                            <constraint firstItem="aMn-h4-8yd" firstAttribute="leading" secondItem="qUV-eV-Hai" secondAttribute="leading" id="eI1-et-nY7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qUV-eV-Hai"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="aMn-h4-8yd" id="mMU-HC-mpv"/>
+                        <segue destination="XTJ-bY-6PH" kind="show" identifier="ExploreProfileSegue" id="2NN-NB-9bC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aF-dm-EKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="197"/>
+            <point key="canvasLocation" x="160.80000000000001" y="196.55172413793105"/>
+        </scene>
+        <!--ExploreProfileVCID-->
+        <scene sceneID="sQ7-vN-PL4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ExploreProfile" referencedIdentifier="ExploreProfileVCID" id="XTJ-bY-6PH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Mq-Qt-3Lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1058" y="192"/>
         </scene>
     </scenes>
 </document>

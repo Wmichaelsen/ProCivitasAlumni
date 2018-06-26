@@ -28,6 +28,16 @@
             </objects>
             <point key="canvasLocation" x="-370" y="20"/>
         </scene>
+        <!--FeedVCID-->
+        <scene sceneID="xYD-t4-gyl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" referencedIdentifier="FeedVCID" id="hHG-bW-37b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="taH-gU-2bS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rmu-DW-Xld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="20"/>
+        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="6ci-S6-eDx">
             <objects>
@@ -40,6 +50,7 @@
                     <connections>
                         <segue destination="fX6-8R-E9f" kind="relationship" relationship="viewControllers" id="ZnS-I2-D8y"/>
                         <segue destination="3A5-Ai-NVz" kind="relationship" relationship="viewControllers" id="cn7-of-FEG"/>
+                        <segue destination="hHG-bW-37b" kind="relationship" relationship="viewControllers" id="Zh4-lj-DY7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOk-LR-9GP" userLabel="First Responder" sceneMemberID="firstResponder"/>

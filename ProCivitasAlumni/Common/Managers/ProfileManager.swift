@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreLocation
 
 public final class ProfileManager: NSObject {
     
@@ -16,12 +17,14 @@ public final class ProfileManager: NSObject {
         return ProfileManager()
     }()
     
+    //MARK:- Members
+    var currentProfile: Profile?
+    
+    //MARK:- Methods
+    
     private override init() {
         super.init()
     }
-    
-    var profiles: [Profile]?
-    var currentProfile: Profile?
     
     /* First creates an authenticated user, then saves user data in database */
     func createProfile(profile: Profile, password: String, withCompletion completion: @escaping (Profile?, Error?) -> Void) {
@@ -36,19 +39,23 @@ public final class ProfileManager: NSObject {
                 return
             }
             
-            FirebaseDBManager.shared.write(data: profile.dictionaryObject, atPath: "/users/\(user.uid)", withCompletion: { (dbError, _) in
+            var data: [String : Any] = profile.dictionaryObject
+            data["trackingAllowed"] = false
+            
+            FirebaseDBManager.shared.write(data: data, atPath: "/users/\(user.uid)", withCompletion: { (dbError, _) in
                 if dbError != nil {
                     completion(nil, dbError)
                     return
                 }
-                
-                completion(profile, nil)
+                let prof = profile
+                prof.password = password
+                completion(prof, nil)
             })
         })
     }
     
     func login(profile: Profile, withCompletion completion: @escaping (Profile?, Error?) -> Void) {
-        FirebaseAuthManager.shared.login(email: profile.email, password: profile.password, withCompletion: { (user, error) in
+        FirebaseAuthManager.shared.login(email: profile.email, password: profile.password!, withCompletion: { (user, error) in
             if error != nil {
                 completion(nil, error!)
             } else {
@@ -78,11 +85,11 @@ public final class ProfileManager: NSObject {
     }
     
     func rememberProfile(profile: Profile) {
-        UserDefaults.standard.set(profile.dictionaryObject, forKey: kCurrentProfileKey)
+        kUserDefaults.set(profile.dictionaryObject, forKey: kCurrentProfileKey)
     }
     
     func forgetCurrentProfile() {
-        UserDefaults.standard.removeObject(forKey: kCurrentProfileKey)
+        kUserDefaults.removeObject(forKey: kCurrentProfileKey)
     }
     
     func createProfile(object: [String : Any]) -> Profile {
@@ -90,7 +97,7 @@ public final class ProfileManager: NSObject {
     }
     
     func setCurrentProfile(uid: String? = nil) {
-        let profileObj = UserDefaults.standard.object(forKey: kCurrentProfileKey) as? [String : Any] ?? [String : Any]()
+        let profileObj = kUserDefaults.object(forKey: kCurrentProfileKey) as? [String : Any] ?? [String : Any]()
         let profile = Profile(object: profileObj)
         
         if let uid = uid {
@@ -98,6 +105,18 @@ public final class ProfileManager: NSObject {
         }
         
         self.currentProfile = profile
+    }
+    
+    func updateTrackingAllowed(_ allowed: Bool) {
+        guard let currentUID = self.currentProfile?.uid else { return }
+        
+        FirebaseDBManager.shared.update(data: allowed, atPath: "/users/\(currentUID)/trackingAllowed", withCompletion: { (error, ref) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    AlertView(title: "Oops", message: error.localizedDescription).show()
+                }
+            }
+        })
     }
     
     func listenToAuthStatusChanged() {
@@ -108,8 +127,46 @@ public final class ProfileManager: NSObject {
             } else {
                 let profile = Profile(email: user!.email!, uid: user?.uid)
                 self.currentProfile = profile
+                self.fetchOldUserLocation()
                 self.rememberProfile(profile: profile)
             }
         })
     }
+    
+    func updateUserLocation(location: CLLocation) {
+        guard let currentUID = currentProfile?.uid else { return }
+        
+        if let oldLocationCoordinates = currentProfile?.personalDetails?.coordinate {
+            let oldLocation = CLLocation(latitude: oldLocationCoordinates.first!, longitude: oldLocationCoordinates.last!)
+            let distance = location.distance(from: oldLocation)
+            
+            if distance < kLocationUpdateThreshold {
+                return
+            }
+        }
+        
+        let path = "users/\(currentUID)/coordinate"
+        FirebaseDBManager.shared.update(data: [location.coordinate.latitude, location.coordinate.longitude], atPath: path, withCompletion: { (error, ref) in
+            guard error == nil else {
+                //TODO: track error (analytics)
+                return
+            }
+            
+            self.currentProfile?.personalDetails?.coordinate = [location.coordinate.latitude, location.coordinate.longitude]
+        })
+    }
+    
+}
+
+//MARK:- Helpers
+extension ProfileManager {
+    
+    func fetchOldUserLocation() {
+        guard let currentUID = self.currentProfile?.uid else { return }
+        let path = "users/\(currentUID)/coordinate"
+        FirebaseDBManager.shared.readDataOnce(atPath: path, withType: .value, withCompletion: { (snapshot) in
+            self.currentProfile?.personalDetails?.coordinate = snapshot.value as! [Double]
+        })
+    }
+    
 }

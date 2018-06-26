@@ -92,8 +92,6 @@ open class AlertView: UIView {
     lblTitle.sizeToFit()
     lblMessage.sizeToFit()
     
-    let okButtonTitleString = okButtonTitle
-
     self.btnOk.setTitle("Ok", for: .normal)
     self.btnCancel.setTitle("Cancel", for: .normal)
     

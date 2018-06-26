@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Linkedin View Controller-->
+        <scene sceneID="ItF-V8-BEo">
+            <objects>
+                <viewController storyboardIdentifier="LinkedinVCID" id="Z8I-JB-3YC" customClass="LinkedinViewController" customModule="ProCivitasAlumni" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ad0-Xr-0Yo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zsN-uE-G1B">
+                                <rect key="frame" x="68" y="161" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="JR2-Qm-i2P"/>
+                                    <constraint firstAttribute="width" constant="75" id="QTc-vq-v84"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB9-b2-DGI" customClass="RoundedButton" customModule="ProCivitasAlumni" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.30980392156862746" blue="0.46666666666666667" alpha="0.94055008561643838" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="R5N-c8-euh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="finishTapped:" destination="Z8I-JB-3YC" eventType="touchUpInside" id="qES-uB-E5u"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-fh-pVa">
+                                <rect key="frame" x="16" y="268" width="343" height="30.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="The app will use your Linkedin data to populate your profile page and help you connect with fellow alumnae">
+                                        <attributes>
+                                            <color key="NSColor" red="0.072370152507746033" green="0.19079843282268369" blue="0.28923963620981386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL9-Gh-Ubo">
+                                <rect key="frame" x="16" y="463" width="343" height="30.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="The app will use your current location to pin you onto the Explore map allowing fellow alumnae to see where you currently are">
+                                        <attributes>
+                                            <color key="NSColor" red="0.072370152507746033" green="0.19079843282268369" blue="0.28923963620981386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpX-xi-xEz">
+                                <rect key="frame" x="162" y="161" width="166" height="75"/>
+                                <state key="normal" title="Connect Linkedin">
+                                    <color key="titleColor" red="0.072370152509999994" green="0.1907984328" blue="0.28923963619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectTapped:" destination="Z8I-JB-3YC" eventType="touchUpInside" id="g7v-QJ-dhe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-UE-WWj">
+                                <rect key="frame" x="162" y="356" width="166" height="75"/>
+                                <state key="normal" title="Show Location">
+                                    <color key="titleColor" red="0.072370152509999994" green="0.1907984328" blue="0.28923963619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLocationTapped:" destination="Z8I-JB-3YC" eventType="touchUpInside" id="hgb-uu-4k3"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kd7-SK-pNh">
+                                <rect key="frame" x="68" y="161" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.12883125989999999" green="0.21204375859999999" blue="0.28923963619999998" alpha="0.6521832191780822" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIP-vb-bUM">
+                                <rect key="frame" x="68" y="356" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.12883125989999999" green="0.21204375859999999" blue="0.28923963619999998" alpha="0.6521832192" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon3" translatesAutoresizingMaskIntoConstraints="NO" id="zgn-5Y-m4k">
+                                <rect key="frame" x="68" y="356" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="TAz-71-vRz"/>
+                                    <constraint firstAttribute="width" constant="75" id="yQs-bU-dJC"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xix-7G-lOh">
+                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                                <color key="backgroundColor" red="0.12883125989999999" green="0.21204375859999999" blue="0.28923963619999998" alpha="0.6521832192" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QIP-vb-bUM" firstAttribute="height" secondItem="zgn-5Y-m4k" secondAttribute="height" id="1cE-OM-5Z4"/>
+                            <constraint firstItem="vpX-xi-xEz" firstAttribute="top" secondItem="zsN-uE-G1B" secondAttribute="top" id="4Vr-BB-thu"/>
+                            <constraint firstItem="bL9-Gh-Ubo" firstAttribute="leading" secondItem="qe1-lD-a77" secondAttribute="leading" constant="16" id="53t-A4-yiE"/>
+                            <constraint firstItem="qe1-lD-a77" firstAttribute="trailing" secondItem="IB9-b2-DGI" secondAttribute="trailing" id="6sL-vb-FCe"/>
+                            <constraint firstItem="fUE-UE-WWj" firstAttribute="top" secondItem="zgn-5Y-m4k" secondAttribute="top" id="8Sa-H0-h14"/>
+                            <constraint firstItem="zgn-5Y-m4k" firstAttribute="top" secondItem="hOK-fh-pVa" secondAttribute="bottom" constant="57.5" id="8iJ-Un-qqr"/>
+                            <constraint firstItem="hOK-fh-pVa" firstAttribute="leading" secondItem="qe1-lD-a77" secondAttribute="leading" constant="16" id="AiM-0u-Uvv"/>
+                            <constraint firstItem="qe1-lD-a77" firstAttribute="trailing" secondItem="vpX-xi-xEz" secondAttribute="trailing" constant="47" id="BKp-hu-YRZ"/>
+                            <constraint firstItem="Kd7-SK-pNh" firstAttribute="centerY" secondItem="zsN-uE-G1B" secondAttribute="centerY" id="Bva-8d-lMJ"/>
+                            <constraint firstItem="qe1-lD-a77" firstAttribute="trailing" secondItem="hOK-fh-pVa" secondAttribute="trailing" constant="16" id="C2t-Mi-Y6e"/>
+                            <constraint firstItem="Kd7-SK-pNh" firstAttribute="centerX" secondItem="zsN-uE-G1B" secondAttribute="centerX" id="F5c-wt-uOP"/>
+                            <constraint firstItem="fUE-UE-WWj" firstAttribute="leading" secondItem="zgn-5Y-m4k" secondAttribute="trailing" constant="19" id="L6p-TW-b6K"/>
+                            <constraint firstItem="QIP-vb-bUM" firstAttribute="centerX" secondItem="zgn-5Y-m4k" secondAttribute="centerX" id="O87-SI-Cny"/>
+                            <constraint firstItem="fUE-UE-WWj" firstAttribute="bottom" secondItem="zgn-5Y-m4k" secondAttribute="bottom" id="OKY-7R-6wv"/>
+                            <constraint firstItem="zsN-uE-G1B" firstAttribute="top" secondItem="qe1-lD-a77" secondAttribute="top" constant="141" id="Odh-1M-NGz"/>
+                            <constraint firstItem="Kd7-SK-pNh" firstAttribute="width" secondItem="zsN-uE-G1B" secondAttribute="width" id="Pwx-4s-Tdy"/>
+                            <constraint firstItem="QIP-vb-bUM" firstAttribute="width" secondItem="zgn-5Y-m4k" secondAttribute="width" id="RgD-X8-1kX"/>
+                            <constraint firstItem="Xix-7G-lOh" firstAttribute="height" secondItem="IB9-b2-DGI" secondAttribute="height" id="TNs-az-YCO"/>
+                            <constraint firstItem="zsN-uE-G1B" firstAttribute="leading" secondItem="qe1-lD-a77" secondAttribute="leading" constant="68" id="UOP-ei-EcM"/>
+                            <constraint firstItem="Kd7-SK-pNh" firstAttribute="height" secondItem="zsN-uE-G1B" secondAttribute="height" id="V4h-ts-Qll"/>
+                            <constraint firstItem="IB9-b2-DGI" firstAttribute="bottom" secondItem="qe1-lD-a77" secondAttribute="bottom" id="dii-gS-cuN"/>
+                            <constraint firstItem="Xix-7G-lOh" firstAttribute="centerX" secondItem="IB9-b2-DGI" secondAttribute="centerX" id="e7h-2x-IGf"/>
+                            <constraint firstItem="QIP-vb-bUM" firstAttribute="centerY" secondItem="zgn-5Y-m4k" secondAttribute="centerY" id="eYE-07-6kn"/>
+                            <constraint firstItem="Xix-7G-lOh" firstAttribute="centerY" secondItem="IB9-b2-DGI" secondAttribute="centerY" id="fJS-xP-PHL"/>
+                            <constraint firstItem="qe1-lD-a77" firstAttribute="trailing" secondItem="fUE-UE-WWj" secondAttribute="trailing" constant="47" id="hf0-xg-1In"/>
+                            <constraint firstItem="qe1-lD-a77" firstAttribute="trailing" secondItem="bL9-Gh-Ubo" secondAttribute="trailing" constant="16" id="lZu-um-OUi"/>
+                            <constraint firstItem="Xix-7G-lOh" firstAttribute="width" secondItem="IB9-b2-DGI" secondAttribute="width" id="pfy-nz-ucf"/>
+                            <constraint firstItem="vpX-xi-xEz" firstAttribute="leading" secondItem="zsN-uE-G1B" secondAttribute="trailing" constant="19" id="r7E-bF-hXH"/>
+                            <constraint firstItem="bL9-Gh-Ubo" firstAttribute="top" secondItem="zgn-5Y-m4k" secondAttribute="bottom" constant="32" id="tdv-up-KAG"/>
+                            <constraint firstItem="zgn-5Y-m4k" firstAttribute="leading" secondItem="qe1-lD-a77" secondAttribute="leading" constant="68" id="tpg-EC-ZMg"/>
+                            <constraint firstItem="IB9-b2-DGI" firstAttribute="leading" secondItem="qe1-lD-a77" secondAttribute="leading" id="vQc-qR-Tea"/>
+                            <constraint firstItem="vpX-xi-xEz" firstAttribute="bottom" secondItem="zsN-uE-G1B" secondAttribute="bottom" id="vVG-eA-aJv"/>
+                            <constraint firstItem="hOK-fh-pVa" firstAttribute="top" secondItem="zsN-uE-G1B" secondAttribute="bottom" constant="32" id="wBH-vD-FnY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qe1-lD-a77"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishBtn" destination="IB9-b2-DGI" id="1LB-gV-VN9"/>
+                        <outlet property="finishOverlay" destination="Xix-7G-lOh" id="HdD-9U-LGA"/>
+                        <outlet property="linkedinOverlay" destination="Kd7-SK-pNh" id="9DT-VG-miQ"/>
+                        <outlet property="locationOverlay" destination="QIP-vb-bUM" id="p2l-FB-ObH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDN-h9-dml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18.399999999999999" y="155.17241379310346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon3" width="120" height="120"/>
+        <image name="linkedinIcon" width="153" height="153"/>
+    </resources>
+</document>
